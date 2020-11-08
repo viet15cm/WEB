@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WEBAPI.MVCModels.JionModels.EmployeeDepartments>
+
+@{
+    ViewBag.Title = "EmployeeDepartments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmployeeDepartments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped table-bordered  ">
+   
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDEP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameEmployee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Addrees)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameDepartment)
+            </th>
+            <th></th>
+        </tr>
+      
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDEP)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameEmployee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Addrees)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameDepartment)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+</table>
